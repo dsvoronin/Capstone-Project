@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/half_space"
+    android:layout_marginLeft="@dimen/space"
+    android:layout_marginRight="@dimen/space"
+    android:layout_marginTop="@dimen/double_space"
+    android:foreground="?selectableItemBackground"
+    app:cardBackgroundColor="@color/content_card">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/news_image"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:contentDescription="@string/cd_item_image"
+            android:scaleType="centerCrop"
+            tools:src="@mipmap/ic_launcher" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/space" />
+
+        <TextView
+            android:id="@+id/news_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/double_space"
+            android:layout_marginRight="@dimen/double_space"
+            android:fontFamily="sans-serif-condensed"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            tools:text="Компания GSL.TV рада анонсировать новые онлайн-турниры GSL CUP по трём дисциплинам: DOTA 2, CS:GO и HEARTHSTONE.	" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/space" />
+
+        <TextView
+            android:id="@+id/news_pub_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/half_space"
+            android:layout_marginLeft="@dimen/double_space"
+            android:layout_marginRight="@dimen/double_space"
+            android:fontFamily="sans-serif-condensed"
+            tools:text="15 марта" />
+
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>

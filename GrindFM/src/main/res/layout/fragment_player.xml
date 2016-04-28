@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/space">
+
+    <ImageView
+        android:id="@+id/player_artwork"
+        android:layout_width="@dimen/icon"
+        android:layout_height="@dimen/icon"
+        android:layout_marginEnd="@dimen/space"
+        android:layout_marginRight="@dimen/space"
+        android:contentDescription="@string/cd_artwork"
+        android:src="@mipmap/ic_launcher" />
+
+    <ImageView
+        android:id="@+id/play_pause"
+        android:layout_width="@dimen/icon"
+        android:layout_height="@dimen/icon"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:background="?selectableItemBackground"
+        android:clickable="true"
+        android:contentDescription="@string/cd_play_pause"
+        tools:src="@drawable/ic_play_arrow_black_24dp" />
+
+    <TextView
+        android:id="@+id/track_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/player_artwork"
+        android:layout_toLeftOf="@id/play_pause"
+        android:layout_toRightOf="@id/player_artwork"
+        android:layout_toStartOf="@id/play_pause"
+        android:ellipsize="marquee"
+        android:fontFamily="sans-serif-condensed"
+        android:singleLine="true"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        tools:text="Moonrise" />
+
+    <TextView
+        android:id="@+id/track_artist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/track_name"
+        android:layout_toEndOf="@id/player_artwork"
+        android:layout_toLeftOf="@id/play_pause"
+        android:layout_toRightOf="@id/player_artwork"
+        android:layout_toStartOf="@id/play_pause"
+        android:ellipsize="marquee"
+        android:fontFamily="sans-serif-condensed"
+        android:singleLine="true"
+        android:textSize="18sp"
+        tools:text="Sithu Aye" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/track_history"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/player_artwork"
+        android:layout_marginTop="@dimen/double_space" />
+
+</RelativeLayout>

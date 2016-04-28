@@ -1,0 +1,66 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion verMaxSdk
+    buildToolsVersion verBuildTools
+
+    defaultConfig {
+        applicationId "fm.grind.android"
+
+        minSdkVersion verMinSdk
+        targetSdkVersion verMaxSdk
+        versionCode 11
+        versionName "0.5"
+    }
+
+    signingConfigs {
+        release {
+            storeFile file("mykey.keystore")
+            storePassword "dasdas"
+            keyAlias "grind"
+            keyPassword "dasdas"
+        }
+    }
+
+    buildTypes {
+        release {
+            signingConfig signingConfigs.release
+            proguardFile 'proguard.cfg'
+        }
+    }
+}
+
+dependencies {
+    compile "com.android.support:appcompat-v7:$verSupport"
+    compile "com.android.support:support-v4:$verSupport"
+    compile "com.android.support:design:$verSupport"
+    compile "com.android.support:support-annotations:$verSupport"
+    compile "com.android.support:cardview-v7:$verSupport"
+    compile "com.android.support:recyclerview-v7:$verSupport"
+
+    compile "com.google.android.gms:play-services-analytics:$verPlayServices"
+    compile "com.google.android.gms:play-services-gcm:$verPlayServices"
+
+    compile 'com.squareup.okhttp3:okhttp:3.2.0'
+    compile 'com.squareup.picasso:picasso:2.5.2'
+    compile 'com.jakewharton.picasso:picasso2-okhttp3-downloader:1.0.2'
+    compile 'com.squareup.retrofit2:retrofit:2.0.2'
+    compile 'com.squareup.retrofit2:converter-gson:2.0.2'
+    compile('com.squareup.retrofit2:converter-simplexml:2.0.2') {
+        exclude module: 'stax'
+        exclude module: 'stax-api'
+        exclude module: 'xpp3'
+    }
+
+    compile 'com.facebook.stetho:stetho:1.3.1'
+    compile 'com.facebook.stetho:stetho-okhttp3:1.3.1'
+
+    debugCompile 'com.squareup.leakcanary:leakcanary-android:1.4-beta2'
+    releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.4-beta2'
+
+    testCompile 'junit:junit:4.12'
+    testCompile "org.robolectric:robolectric:3.0"
+    testCompile "com.squareup.leakcanary:leakcanary-android-no-op:1.4-beta2"
+}
+
+apply plugin: 'com.google.gms.google-services'
